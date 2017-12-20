@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+
+
+    <meta name="generator" content="Silex v2.2.7">
+
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/jquery.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/jquery-ui.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/pageable.js" data-silex-static=""></script>
+    <script type="text/javascript" src="//editor.silex.me/static/2.7/front-end.js" data-silex-static=""></script>
+    <link rel="stylesheet" href="//editor.silex.me/static/2.7/normalize.css" data-silex-static="">
+    <link rel="stylesheet" href="//editor.silex.me/static/2.7/front-end.css" data-silex-static="">
+    <style type="text/css" class="silex-style">
+        div.hero-bottom {
+            top: auto;
+            bottom: 30px;
+        }
+        
+        body {
+            font-family: arial, sans-serif;
+            font-size: 19px;
+            padding: 0 !important;
+            /* no white spoace at the top in mobile */
+        }
+        
+        h1 {
+            font-size: 70px;
+            font-weight: 100;
+            line-height: .8;
+        }
+        
+        h2 {
+            font-size: 25px;
+            font-weight: 100;
+            line-height: 1.5;
+        }
+        
+        .bg-grad {
+            background: #82c2ed;
+            background: -moz-linear-gradient(-45deg, #82c2ed 0, #a381ee 100%);
+            background: -webkit-linear-gradient(-45deg, #82c2ed 0, #a381ee 100%);
+            background: linear-gradient(135deg, #82c2ed 0, #a381ee 100%);
+        }
+        
+        .bg-grad2 {
+            background: #8adbdb;
+            background: -moz-linear-gradient(-45deg, #8adbdb 0, #344e9b 100%);
+            background: -webkit-linear-gradient(-45deg, #8adbdb 0, #344e9b 100%);
+            background: linear-gradient(135deg, #8adbdb 0, #344e9b 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8adbdb', endColorstr='#344e9b', GradientType=1);
+        }
+        
+        .scroll-down {
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" class="silex-script">
+        function fullHeight() {
+            var RATIO = 1; // 3/4
+            if($(window).width() < 480) return;
+            $('.hero').each(function() {
+                // get section content (for sections only)
+                var sectionContent = $(this).find('.silex-element-content');
+                // if this is a section, get its content container's min-height and apply it to the section
+                // so that the section has a minimum height
+                var minHeight = sectionContent.length ? sectionContent.css('min-height') : '';
+                $(this).css({
+                    'height': $(window).height()*RATIO,
+                    'min-height': minHeight
+                });
+            });
+            $('.hero-centered').each(function() {
+                var minHeight = $(this).css('min-height');
+                $(this).css({
+                    'top': '50%',
+                    'margin-top': Math.round(-parseInt(minHeight) / 2) + 'px'
+                });
+            });
+        }
+        $(window).resize(fullHeight);
+        $(window).ready(fullHeight);
+    $(window).ready(function() {
+        $('.scroll-down').click(function() {
+            var container = $('html,body'),
+            scrollTo = $('.fold');
+        container.animate({
+            scrollTop: scrollTo.offset().top - container.offset().top + container.scrollTop()
+        });
+        });
+    });
+    
+    
+    
+    
+var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+/*
+ * animation widget from here: https://github.com/silexlabs/Silex/issues/443
+ */
+$(function() {
+    if(!isMobile) {
+        window.sr = ScrollReveal({
+            distance: '100px'
+        });
+        sr.reveal('.from-left', { origin:  'left'});
+        sr.reveal('.from-right', { origin:  'right'});
+        sr.reveal('.from-top', { origin:  'top'});
+        sr.reveal('.from-bottom', { origin:  'bottom'});
+    }
+})
+    </script>
+    <style class="silex-inline-styles" type="text/css">
+        .body-initial {
+            background-color: rgba(255, 255, 255, 1);
+        }
+        
+        .silex-id-1474394621033-3 {
+            top: 0px;
+            left: 0px;
+            background-color: rgba(99, 178, 216, 1);
+            background-image: url('../../../../../../../libs/templates/silex-templates/smart-simple/assets/bg.jpg');
+            background-size: cover;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1474394621033-3 {
+                top: 60px;
+                left: 0px;
+            }
+        }
+        
+        .silex-id-1474394621032-2 {
+            min-height: 669px;
+            background-color: transparent;
+            width: 1200px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1474394621032-2 {
+                min-height: 871px;
+            }
+        }
+        
+        .silex-id-1484589161931-13 {
+            min-height: 334px;
+            width: 447px;
+            top: 156px;
+            left: 553px;
+        }
+        
+        .silex-id-1484576338732-6 {
+            min-height: 305px;
+            width: 515px;
+            background-color: transparent;
+            top: 184px;
+            left: 0px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484576338732-6 {
+                top: 354px;
+                left: 11px;
+                width: 423px;
+                min-height: 372px;
+            }
+        }
+        
+        .silex-id-1484575683599-3 {
+            min-height: 211px;
+            width: 494px;
+            top: 5px;
+            left: 0px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484575683599-3 {
+                top: 16px;
+                left: 11px;
+                width: 401px;
+                min-height: 267px;
+            }
+        }
+        
+        .silex-id-1484655890366-24 {
+            min-height: 30px;
+            width: 30px;
+            top: 597px;
+            left: 530px;
+        }
+        
+        .silex-id-1484590211530-22 {
+            min-height: 100px;
+            top: 1000px;
+            left: 0px;
+            background-color: rgba(245, 245, 245, 1);
+            border-color: #000000;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484590211530-22 {
+                top: 1346px;
+                left: 0px;
+            }
+        }
+        
+        .silex-id-1484590211529-21 {
+            min-height: 485px;
+            background-color: transparent;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484590211529-21 {
+                min-height: 670px;
+            }
+        }
+        
+        .silex-id-1484658879156-30 {
+            min-height: 279px;
+            width: 450px;
+            top: 104px;
+            left: 99px;
+        }
+        
+        .silex-id-1484658276174-26 {
+            min-height: 189px;
+            width: 353px;
+            top: 106px;
+            left: 550px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484658276174-26 {
+                top: 279px;
+                left: 11px;
+                width: 423px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1484658633791-29 {
+            min-height: 100px;
+            top: 1598px;
+            left: 0px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484658633791-29 {
+                top: 2016px;
+                left: 0px;
+            }
+        }
+        
+        .silex-id-1484658633790-28 {
+            min-height: 1160px;
+            background-color: transparent;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484658633790-28 {
+                min-height: 1425px;
+            }
+        }
+        
+        .silex-id-1484658906426-31 {
+            min-height: 303px;
+            width: 500px;
+            top: 145px;
+            left: 0px;
+        }
+        
+        .silex-id-1484659675199-32 {
+            min-height: 189px;
+            width: 314px;
+            top: 177px;
+            left: 686px;
+            border-color: #000000;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484659675199-32 {
+                top: 0px;
+                left: 12px;
+                width: 421px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1484659675214-33 {
+            min-height: 63px;
+            width: 192px;
+            top: 367px;
+            left: 686px;
+            border-radius: 6px 6px 6px 6px;
+            border-color: #000000;
+            background-color: rgba(245, 245, 245, 1);
+        }
+        
+        .silex-id-1484659915267-34 {
+            min-height: 366px;
+            width: 466px;
+            top: 647px;
+            left: 534px;
+        }
+        
+        .silex-id-1484659957952-35 {
+            min-height: 189px;
+            width: 314px;
+            top: 685px;
+            left: 0px;
+            border-color: #000000;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484659957952-35 {
+                top: 921px;
+                left: 11px;
+                width: 423px;
+                min-height: 189px;
+            }
+        }
+        
+        .silex-id-1484659957955-36 {
+            min-height: 63px;
+            width: 192px;
+            top: 875px;
+            left: 0px;
+            border-radius: 6px 6px 6px 6px;
+            border-color: #000000;
+            background-color: rgba(245, 245, 245, 1);
+        }
+        
+        .silex-id-1484660025157-38 {
+            top: 2758px;
+            left: 0px;
+            min-width: 1000px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484660025157-38 {
+                top: 3297px;
+                left: 0px;
+            }
+        }
+        
+        .silex-id-1484660025157-37 {
+            min-height: 717px;
+            background-color: transparent;
+            top: 15px;
+            left: 304px;
+            width: 1000px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484660025157-37 {
+                min-height: 1205px;
+            }
+        }
+        
+        .silex-id-1484660331538-40 {
+            min-height: 360px;
+            width: 660px;
+            top: 361px;
+            left: 336px;
+        }
+        
+        .silex-id-1484660819078-52 {
+            min-height: 323px;
+            width: 647px;
+            top: 7px;
+            left: 4px;
+            border-color: #000000;
+        }
+        
+        .silex-id-1484661251321-55 {
+            min-height: 100px;
+            top: 3478px;
+            left: 0px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484661251321-55 {
+                top: 4669px;
+                left: 0px;
+            }
+        }
+        
+        .silex-id-1484661251321-54 {
+            min-height: 804px;
+            background-color: transparent;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484661251321-54 {
+                min-height: 582px;
+            }
+        }
+        
+        .silex-id-1484661716413-56 {
+            min-height: 513px;
+            width: 600px;
+            top: 124px;
+            left: 210px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1484661716413-56 {
+                top: 69px;
+                left: 11px;
+                width: 423px;
+                min-height: 445px;
+            }
+        }
+        
+        .silex-id-1484662129693-59 {
+            top: 4282px;
+            left: 0px;
+            background-color: rgba(245, 245, 245, 1);
+            border-color: #000000;
+            min-width: 1000px;
+        }
+        
+        .silex-id-1484662129693-60 {
+            min-height: 552px;
+            background-color: transparent;
+            top: 15px;
+            left: 304px;
+            width: 1000px;
+        }
+        
+        .silex-id-1513735235243-1 {
+            width: 392px;
+            min-height: 100px;
+            top: 17px;
+            left: 314px;
+        }
+        
+        .silex-id-1513735125589-0 {
+            width: 400px;
+            height: 330px;
+            background-color: transparent;
+            top: 184px;
+            left: 312px;
+        }
+        
+        .silex-id-1478366450713-3 {
+            top: 4602px;
+            left: 5px;
+            background-color: transparent;
+        }
+        
+        .silex-id-1478366450713-2 {
+            min-height: 285px;
+            background-color: transparent;
+            width: 1200px;
+        }
+        
+        .silex-id-1442914737143-3 {
+            min-height: 3300px;
+            width: 945px;
+            top: 56px;
+            left: 30px;
+        }
+        
+        @media only screen and (max-width: 480px),
+        only screen and (max-device-width: 480px) {
+            .silex-id-1442914737143-3 {
+                top: 57px;
+                left: 11px;
+                width: 423px;
+                min-height: 105px;
+            }
+        }
+    </style>
+    <title>Smart and Simple</title>
+    <script type="text/javascript" class="silex-json-styles">
+        [{"desktop":{"body-initial":{"background-color":"rgba(255,255,255,1)"},"silex-id-1474394621033-3":{"top":"0px","left":"0px","background-color":"rgba(99,178,216,1)","background-image":"url('../../../../../../../libs/templates/silex-templates/smart-simple/assets/bg.jpg')","background-size":"cover"},"silex-id-1474394621032-2":{"min-height":"669px","background-color":"transparent","width":"1200px"},"silex-id-1474394605264-1":{"min-height":"100px","width":"100px","top":"100px","left":"100px"},"silex-id-1474394605263-0":{"min-height":"100px","background-color":"transparent"},"silex-id-1442914737143-3":{"min-height":"3300px","width":"945px","top":"56px","left":"30px"},"silex-id-1478366444112-0":{"min-height":"100px","background-color":"transparent","width":"1200px"},"silex-id-1478366450713-2":{"min-height":"251px","background-color":"transparent","width":"1200px"},"silex-id-1478366450713-3":{"top":"4602px","left":"5px","background-color":"transparent"},"silex-id-1484575683599-3":{"min-height":"211px","width":"494px","top":"5px","left":"0px"},"silex-id-1484576338732-6":{"min-height":"305px","width":"515px","background-color":"transparent","top":"184px","left":"0px"},"silex-id-1484587463012-10":{"min-height":"331px","background-color":"transparent"},"silex-id-1484589161931-13":{"min-height":"334px","width":"447px","top":"156px","left":"553px"},"silex-id-1484589600542-14":{"min-height":"120px","width":"270px","top":"115px","left":"0px"},"silex-id-1484589884177-15":{"min-height":"107px","width":"107px","top":"87px","left":"375px"},"silex-id-1484589890126-16":{"min-height":"128px","width":"128px","top":"74px","left":"616px"},"silex-id-1484589897940-17":{"min-height":"64px","width":"64px","top":"107px","left":"846px"},"silex-id-1484589925987-18":{"min-height":"42px","width":"154px","top":"200px","left":"405px"},"silex-id-1484589940350-19":{"min-height":"33px","width":"154px","top":"200px","left":"631px"},"silex-id-1484589955761-20":{"min-height":"33px","width":"154px","top":"200px","left":"846px"},"silex-id-1484590211529-21":{"min-height":"485px","background-color":"transparent"},"silex-id-1484590211530-22":{"min-height":"100px","top":"1000px","left":"0px","background-color":"rgba(245,245,245,1)","border-color":"#000000"},"silex-id-1484655890366-24":{"min-height":"30px","width":"30px","top":"597px","left":"530px"},"silex-id-1484658276174-26":{"min-height":"189px","width":"353px","top":"106px","left":"550px"},"silex-id-1484658633790-28":{"min-height":"1160px","background-color":"transparent"},"silex-id-1484658633791-29":{"min-height":"100px","top":"1598px","left":"0px"},"silex-id-1484658879156-30":{"min-height":"279px","width":"450px","top":"104px","left":"99px"},"silex-id-1484658906426-31":{"min-height":"303px","width":"500px","top":"145px","left":"0px"},"silex-id-1484659675199-32":{"min-height":"189px","width":"314px","top":"177px","left":"686px","border-color":"#000000"},"silex-id-1484659675214-33":{"min-height":"63px","width":"192px","top":"367px","left":"686px","border-width":"","border-style":"","border-radius":"6px 6px 6px 6px ","border-color":"#000000","background-color":"rgba(245,245,245,1)"},"silex-id-1484659915267-34":{"min-height":"366px","width":"466px","top":"647px","left":"534px"},"silex-id-1484659957952-35":{"min-height":"189px","width":"314px","top":"685px","left":"0px","border-color":"#000000"},"silex-id-1484659957955-36":{"min-height":"63px","width":"192px","top":"875px","left":"0px","border-width":"","border-style":"","border-radius":"6px 6px 6px 6px ","border-color":"#000000","background-color":"rgba(245,245,245,1)"},"silex-id-1484660025157-37":{"min-height":"717px","background-color":"transparent","top":"15px","left":"304px","width":"1000px"},"silex-id-1484660025157-38":{"top":"2758px","left":"0px","min-width":"1000px"},"silex-id-1484660331538-40":{"min-height":"360px","width":"660px","top":"361px","left":"336px"},"silex-id-1484660819078-52":{"min-height":"323px","width":"647px","top":"7px","left":"4px","border-color":"#000000"},"silex-id-1484661251321-54":{"min-height":"804px","background-color":"transparent"},"silex-id-1484661251321-55":{"min-height":"100px","top":"3478px","left":"0px"},"silex-id-1484661716413-56":{"min-height":"513px","width":"600px","top":"124px","left":"210px"},"silex-id-1484662096459-57":{"min-height":"415px","background-color":"transparent"},"silex-id-1484662129693-59":{"top":"4282px","left":"0px","background-color":"rgba(245,245,245,1)","border-color":"#000000","min-width":"1000px"},"silex-id-1484662129693-60":{"min-height":"552px","background-color":"transparent","top":"15px","left":"304px","width":"1000px"},"silex-id-1484662183052-64":{"min-height":"192px","width":"515px","background-color":"transparent","top":"120px","left":"258px"},"silex-id-1484662183053-65":{"min-height":"83px","width":"494px","top":"9px","left":"11px"},"silex-id-1484662183053-66":{"min-height":"43px","width":"158px","top":"126px","left":"81px"},"silex-id-1484662183053-67":{"min-height":"43px","width":"158px","top":"126px","left":"268px"},"silex-id-1513735125589-0":{"width":"400px","height":"330px","background-color":"transparent","top":"184px","left":"312px"},"silex-id-1513735235243-1":{"width":"392px","min-height":"100px","top":"17px","left":"314px"}},"mobile":{"silex-id-1484575683599-3":{"top":"16px","left":"11px","width":"401px","min-height":"267px"},"silex-id-1474394621033-3":{"top":"60px","left":"0px"},"silex-id-1474394621032-2":{"min-height":"871px"},"silex-id-1484576338732-6":{"top":"354px","left":"11px","width":"423px","min-height":"372px"},"silex-id-1484589600542-14":{"top":"2px","left":"11px","width":"423px","min-height":"115px"},"silex-id-1484589925987-18":{"top":"139px","left":"75px","width":"368px","min-height":"42px"},"silex-id-1484589940350-19":{"top":"215px","left":"78px","width":"361px","min-height":"33px"},"silex-id-1484589955761-20":{"top":"282px","left":"78px","width":"361px","min-height":"33px"},"silex-id-1484658276174-26":{"top":"279px","left":"11px","width":"423px","min-height":"189px"},"silex-id-1484659675199-32":{"top":"0px","left":"12px","width":"421px","min-height":"189px"},"silex-id-1484590211530-22":{"top":"1346px","left":"0px"},"silex-id-1484590211529-21":{"min-height":"670px"},"silex-id-1484659957952-35":{"top":"921px","left":"11px","width":"423px","min-height":"189px"},"silex-id-1484658633791-29":{"top":"2016px","left":"0px"},"silex-id-1484658633790-28":{"min-height":"1425px"},"silex-id-1484661251321-55":{"top":"4669px","left":"0px"},"silex-id-1484661251321-54":{"min-height":"582px"},"silex-id-1484661716413-56":{"top":"69px","left":"11px","width":"423px","min-height":"445px"},"silex-id-1442914737143-3":{"top":"57px","left":"11px","width":"423px","min-height":"105px"},"silex-id-1484589884177-15":{"top":"116px","left":"2px","width":"67px","min-height":"67px"},"silex-id-1484589890126-16":{"top":"268px","left":"18px","width":"60px","min-height":"60px"},"silex-id-1484589897940-17":{"top":"269px","left":"12px","width":"58px","min-height":"58px"},"silex-id-1484660025157-38":{"top":"3297px","left":"0px"},"silex-id-1484660025157-37":{"min-height":"1205px"}},"componentData":{"silex-id-1513735125589-0":{"name":"form1","templateName":"form"}}}]
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2.2" data-silex-viewport="">
+
+    <meta name="website-width" content="1000">
+    <style type="text/css" class="silex-style-settings">
+        .website-width {
+            width: 1000px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <meta name="description" content="A smart HTML template by @SilexLabs for your project">
+    <link href="../../../../../../../assets/1484611390_android_phone.png" rel="shortcut icon">
+
+    <meta name="twitter:title" content="Smart &amp; Simple">
+    <meta name="og:title" content="Smart &amp; Simple">
+    <meta name="twitter:description" content="This is a nice web template for my mobile app">
+    <meta name="og:description" content="This is a nice web template for my mobile app">
+    <meta name="twitter:site" content="silexlabs">
+    <meta name="publicationPath" content="/api/1.0/github/exec/put///silex-templates/wip/smart-simple">
+
+    <meta name="twitter:card" content="summary">
+
+    <meta name="twitter:image" content="http://smart-simple.netlify.com/smart-simple/screenshot.png">
+    <meta name="og:image" content="http://smart-simple.netlify.com/smart-simple/screenshot.png">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <style id="current-page-style">
+        .page-page-1 {
+            display: inherit;
+        }
+    </style>
+    <!-- Silex HEAD tag do not remove -->
+    <script src="https://cdn.jsdelivr.net/scrollreveal.js/3.2.0/scrollreveal.min.js"></script>
+    <!-- End of Silex HEAD tag do not remove -->
+</head>
+
+<body data-silex-id="body-initial" class="body-initial enable-mobile silex-runtime" data-silex-type="container">
+    <div class="silex-pages">
+
+        <a id="page-page-1" data-silex-type="page" class="page-element page-link-active">Page 1</a></div>
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1474394621033-3 section-element hero" data-silex-id="silex-id-1474394621033-3" style="">
+        <div data-silex-type="container" class="editable-style silex-element-content silex-id-1474394621032-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1474394621032-2">
+
+
+
+
+
+
+
+
+            <div data-silex-type="image" class="editable-style silex-id-1484589161931-13 image-element hero-centered" data-silex-id="silex-id-1484589161931-13"><img src="../../../../../../../libs/templates/silex-templates/smart-simple/assets/android_app.png" class="silex-element-content"></div>
+            <div data-silex-type="container" class="editable-style silex-id-1484576338732-6 container-element hero-centered" data-silex-id="silex-id-1484576338732-6">
+                <div data-silex-type="text" class="editable-style silex-id-1484575683599-3 text-element" data-silex-id="silex-id-1484575683599-3">
+                    <div class="silex-element-content normal">
+                        <h1 class="heading1">
+                            <font color="#ffffff">You can win!</font>
+                        </h1>
+                        <div>
+                            <p class="normal">
+                                <font color="#ffffff">Hundreds of prizes to give away this Christmas holiday season!</font>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            <div data-silex-type="image" class="editable-style silex-id-1484655890366-24 image-element from-bottom scroll-down hero-bottom hide-on-mobile" data-silex-id="silex-id-1484655890366-24"><img src="../../../../../../../libs/templates/silex-templates/smart-simple/assets/scroll.png" class="silex-element-content"></div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1484590211530-22 section-element" data-silex-id="silex-id-1484590211530-22">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1484590211529-21 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1484590211529-21">
+
+
+
+            <div data-silex-type="image" class="editable-style silex-id-1484658879156-30 image-element from-left" data-silex-id="silex-id-1484658879156-30"><img src="../../../../../../../libs/templates/silex-templates/smart-simple/assets/piwiklaptop-small.png" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1484658276174-26 from-right" data-silex-id="silex-id-1484658276174-26">
+                <div class="silex-element-content normal">
+                    <h2 class="heading2">Dozens of prizes to give away!</h2>
+                    <div>But you need to be in it to win it!</div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1484658633791-29 section-element" data-silex-id="silex-id-1484658633791-29">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1484658633790-28 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1484658633790-28">
+
+
+            <div data-silex-type="image" class="editable-style silex-id-1484658906426-31 image-element from-left" data-silex-id="silex-id-1484658906426-31"><img src="../../../../../../../libs/templates/silex-templates/smart-simple/assets/mobile_header-small.jpg" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1484659675199-32 from-right" data-silex-id="silex-id-1484659675199-32">
+                <div class="silex-element-content normal">
+                    <h2 class="heading2">A Landing Page<br><span style="line-height: 1.5;">For Your App</span></h2>
+                    <div>You can customize this web page with <a href="http://www.silex.me/">Silex website builder</a>.</div>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1484659675214-33 from-right page-link-active" data-silex-id="silex-id-1484659675214-33" data-silex-href="#!page-page-1">
+                <div class="silex-element-content normal">
+                    <br>
+                    <div style="text-align: center;"><span style="font-weight: lighter;">Read more</span></div>
+                </div>
+            </div>
+            <div data-silex-type="image" class="editable-style silex-id-1484659915267-34 image-element from-right" data-silex-id="silex-id-1484659915267-34"><img src="../../../../../../../libs/templates/silex-templates/smart-simple/assets/apple_app.jpg" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1484659957952-35 from-left" data-silex-id="silex-id-1484659957952-35">
+                <div class="silex-element-content normal">
+                    <h2 class="heading2">A Landing Page<br><span style="line-height: 1.5;">For Your App</span></h2>
+                    <div>You can customize this web page with <a href="http://www.silex.me/">Silex website builder</a>.</div>
+                </div>
+            </div>
+            <div data-silex-type="text" class="editable-style text-element silex-id-1484659957955-36 from-left page-link-active" data-silex-id="silex-id-1484659957955-36" data-silex-href="#!page-page-1">
+                <div class="silex-element-content normal">
+                    <br>
+                    <div style="text-align: center;"><span style="font-weight: lighter;">Read more</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1484660025157-38 section-element bg-grad" data-silex-id="silex-id-1484660025157-38">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1484660025157-37 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1484660025157-37">
+
+
+
+
+
+
+
+
+            <div data-silex-type="image" class="editable-style silex-id-1484660331538-40 image-element from-right" data-silex-id="silex-id-1484660331538-40" style=""><img src="honda.png" class="silex-element-content"></div>
+            <div data-silex-type="text" class="editable-style silex-id-1484660819078-52 text-element from-left" data-silex-id="silex-id-1484660819078-52" style="">
+                <div class="silex-element-content normal">
+                    <h1 class="heading1">
+                        <font color="#ffffff">You can win a lot of prizes</font>
+                    </h1>
+                    <div>
+                        <font color="#ffffff">
+                            <p class="normal">A brand new car! TVs! Sound bars! Adventure holidays! So many others!</p>
+                        </font>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1484661251321-55 section-element" data-silex-id="silex-id-1484661251321-55">
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-id-1484661251321-54 silex-container-content container-element prevent-draggable" data-silex-id="silex-id-1484661251321-54">
+            <div data-silex-type="image" class="editable-style silex-id-1484661716413-56 image-element" data-silex-id="silex-id-1484661716413-56"><img src="../../../../../../../libs/templates/silex-templates/smart-simple/assets/mobile-app-screen-shot.jpeg" class="silex-element-content"></div>
+        </div>
+    </div>
+
+
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style section-element silex-id-1484662129693-59" data-silex-id="silex-id-1484662129693-59">
+
+        <div data-silex-type="container" class="editable-style silex-element-content website-width silex-container-content container-element prevent-draggable silex-id-1484662129693-60" data-silex-id="silex-id-1484662129693-60">
+
+
+
+
+
+
+
+
+
+            <div data-silex-type="text" class="editable-style silex-id-1513735235243-1 text-element" data-silex-id="silex-id-1513735235243-1" style="">
+                <div class="silex-element-content normal">
+                    <h1 class="heading1" style="text-align: center;">Enter here!</h1>
+                </div>
+            </div>
+            <div data-silex-type="html" class="editable-style silex-id-1513735125589-0 html-element silex-component silex-component-form silex-use-height-not-minheight" data-silex-id="silex-id-1513735125589-0" style="">
+                <div class="silex-element-content">
+                    <form id="id_1513735127260_622" action="https://formspree.io/your@email.com" method="POST">
+
+                        <div>
+                            <label for="field1">Name</label>
+                            <input type="text" required="" id="field1" name="field1" placeholder="Your name">
+                        </div>
+
+
+                        <div>
+                            <label for="field2">Your email adress</label>
+                            <input type="text" required="" id="field2" name="field2" placeholder="your@email.com">
+                        </div>
+
+
+                        <div class="fill-vertical">
+                            <label for="field3">Your message</label>
+                            <textarea required="" id="field3" name="field3" placeholder="What you have to say"></textarea>
+                        </div>
+
+                        <input type="submit" value="Send">
+                    </form>
+                    <style>
+                        #id_1513735127260_622 input[type=text],
+                        select {
+                            width: 100%;
+                            padding: 12px 20px;
+                            margin: 8px 0;
+                            display: inline-block;
+                            border: 1px solid #ccc;
+                            border-radius: 3px;
+                            box-sizing: border-box;
+                        }
+                        
+                        #id_1513735127260_622 input[type=submit] {
+                            width: 100%;
+                            background-color: #4CAF50;
+                            color: #FFFFFF;
+                            padding: 14px 20px;
+                            margin: 8px 0;
+                            border: 1px solid #4CAF50;
+                            border-radius: 3px;
+                            cursor: pointer;
+                        }
+                        
+                        #id_1513735127260_622 label {
+                            color: #000000;
+                        }
+                        /* *************************** */
+                        /* resize the 3rd field
+   and fill the vertical space */
+                        
+                        #id_1513735127260_622 .fill-vertical {
+                            flex: 1 1 auto;
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        
+                        #id_1513735127260_622 .fill-vertical textarea {
+                            flex: 1 1 auto;
+                            width: 100%;
+                            height: 150px;
+                            padding: 12px 20px;
+                            box-sizing: border-box;
+                            border: 2px solid #ccc;
+                            border-radius: 3px;
+                            background-color: #f8f8f8;
+                            font-size: 16px;
+                            resize: none;
+                        }
+                        /* ************************ */
+                        
+                        #id_1513735127260_622 {
+                            border-radius: 3px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            height: 100%;
+                        }
+                    </style>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div data-silex-type="container" class="prevent-draggable container-element editable-style silex-id-1478366450713-3 section-element" data-silex-id="silex-id-1478366450713-3" style="">
+        <div data-silex-type="container" class="editable-style silex-element-content silex-id-1478366450713-2 silex-container-content container-element prevent-draggable website-width" data-silex-id="silex-id-1478366450713-2">
+
+            <div data-silex-id="silex-id-1442914737143-3" class="editable-style silex-id-1442914737143-3 text-element" data-silex-type="text">
+                <div class="silex-element-content normal">
+                    <font size="1"><br>
+                    </font>
+                    <div style="text-align: center;">
+                        <a href="//www.silex.me/">
+                            <font size="1">Powered by Silex</font>
+                        </a>
+                    </div>
+                    <div style="text-align: center;">
+                        <font size="1"><span style="font-weight: lighter;">Released for free under the&nbsp;</span>Creative Commons License.</font>
+                    </div>
+                    <div style="text-align: center;">
+                        <h1 style="margin-top: 10px; margin-bottom: 10px; line-height: inherit; color: rgb(48, 48, 48); text-rendering: optimizeLegibility; text-transform: uppercase; text-align: start; background-color: rgb(255, 255, 255);">
+                            <font size="1" style="" face="arial, sans-serif">TERMS AND CONDITIONS</font>
+                        </h1>
+                        <div itemprop="articleBody" style="color: rgb(51, 51, 51); text-align: start; background-color: rgb(255, 255, 255);">
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">1. The Promoter is Duosanis (ABN 6345789). Duosanis, the publisher of Duosanis Magazine is an imprint of Duosanis.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">2. Information on prizes and how to enter Morrison Media competitions form part of these Terms &amp; Conditions of Entry.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">3. By entering Duosanis competitions, entrants accept the above-stated Terms &amp; Conditions of Entry.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">4. Entry to Duosanis competitions are open to all Australian residents; excluding employees and their immediate families of the Promoter and its related companies.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">5. To enter Duosanis competitions, entrants must answer all competition questions and entries must be received by the Promoter by the close of business on the specified closing date.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">6. Prize winners of Duosanis competitions are selected at Suite 2 Level 36 1111 Pitt St, Sydney&nbsp;NSW 2000 on the specified competition judging date. Winners are contacted by email or mail within 5 business days of selection
+                                    and may be announced in an upcoming issue of the respective publication and/or the publication's website.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">7. The judges' decision is final and binding. As such, no correspondence will be entered into.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">8. Competitions are games of skill and as such, winning entries are selected based on the creativity of entries submitted.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">9. Unless expressly stated, all other expenses become the responsibility of the winner.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">10. If any prize is unavailable, for whatever reason, the Promoter reserves the right to substitute the prize for a prize of equal or greater value.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">11. Prize winners are advised that tax implications may arise from their prize winning and may wish to seek independent financial advice prior to the acceptance of the prize.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">12. Subject to the unclaimed prize draw clause, if for any reason a winner does not take the prize or an element of the prize by the time stipulated by the Promoter, then the prize or that element of the prize will be forfeited.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">13. All prize winners agree to the use of their name and address suburb for publicity and competition purposes, without compensation.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">14. The Promoter shall not be liable for any loss or damage whatsoever which is suffered (including but not limited to indirect or consequential loss) or for any personal injury suffered or sustained in connection with
+                                    the prize except for any liability which cannot be excluded by law.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">15. As a condition of accepting the prize, the winner (and his/her companion – where applicable) must sign any legal documentation as and in the form required by the Promoter and/or prize suppliers in their absolute discretion,
+                                    including but not limited to a legal release and indemnity form.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">16. Prizes are not redeemable for cash, credit or product and no exchanges are offered. The Promoter accepts no responsibility for any variation in the value of the prize (or part thereof).</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">17. The Promoter, their associated agencies and companies associated with this competition take no responsibility for prize damage or lost in transit and the Promoter will not be responsible for any delay in delivery, damage
+                                    to or loss in transit of the prize.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">18a. Each entrant's personal information ("PI") is collected to enable the Promoter to administer and promote this Competition and the winner. The PI of winners may be provided to third parties who are assisting the Promoter,
+                                    including prize suppliers, deliverers and authorities that regulate competitions. Entrants who fail to provide all requested PI, may be determined by the Promoter, at its sole discretion to be ineligible to win a prize.
+                                    Errors and omissions may be accepted at the Promoter's discretion. Failure by the Promoter to enforce any of its rights at any stage does not constitute a waiver of those rights.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">18b. The collection, use and disclosure of personal information provided in connection with this promotion is further governed by the Privacy Policy found on the Duosanis website.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">19. The Promoter assumes no responsibility for any error, omission, interruption, corruption, deletion, defect, delay in operation or transmission, communications line failure, theft or destruction or unauthorised access
+                                    to, or alteration of, entries. The Promoter is not responsible for any problems or technical malfunction of any telephone network or lines, computer networks and systems, servers, or providers, computer equipment, software,
+                                    failure of any e-mail or entry to be received by the Promoter on account of technical problems or traffic congestion on the Internet or at any web site, or any combination of them, including any injury or damage to
+                                    any entrant's or any other person's computer related to or resulting from participation or downloading any materials in this Competition.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">20. All entries become the property of Duosanis. As such, Duosanis is the owner of all copyright and other intellectual property in the winning responses.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">21. The laws of Queensland govern Duosanis competitions.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">22. For all alcohol prizes: Entry is open to all residents of Australia aged 18 years and over (excluding residents of Northern Territory). No more than 20 litres of alcohol will be won by New South Wales residents. Once
+                                    20 litres of alcohol has been won by New South Wales residents, cash will be awarded in lieu of the remaining alcohol prize. The Promoter will require winners to provide proof of age. Identification considered suitable
+                                    for verification is at the Promoter's discretion. The Promoter encourages consumers to drink responsibly.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">23. For all travel prizes; Passports, any requisite visas, spending money, meals, insurance, transport to and from departure point, additional transfers, items of a personal nature, in-room charges and all other ancillary
+                                    costs are not included. The winner and companion must depart from and return to the same departure point and travel together. Frequent flyer points will not form part of the prize. If for any reason a winner does not
+                                    take the prize or an element of the prize at the time stipulated by the Promoter, then the prize or that element of the prize will not be redeemable for cash and is subject to booking and flight availability. Itineraries
+                                    are to be determined by the Promoter in its absolute discretion.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">24. During the entire duration of the travel prizes, a nominated parent/guardian must accompany any person under 18 years of age unless otherwise stated. The winner (and his/her companion) is responsible for ensuring that
+                                    they have valid passports, and any requisite visas, vaccinations and travel documentation. Prize is subject to the standard terms and conditions of individual prize and service providers. Winner may be required to present
+                                    credit card at time of accommodation check in.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">25. The Promoter reserves the right in its sole discretion to disqualify any individual who the Promoter has reason to believe has breached any of these conditions, or engaged in any unlawful or other improper misconduct
+                                    calculated to jeopardize the fair and proper conduct of the competition. The Promoters legal rights to recover damages or other compensation from such an offender are reserved.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">26. If for any reason the competition is not capable of running as planned, including due to infection by computer virus, bugs, tampering, unauthorised intervention, fraud, technical failures or any other causes beyond
+                                    the control of the Promoter, which corrupt or affect the administration security, fairness or integrity or proper conduct of this competition, the Promoter reserves the right in its sole discretion to disqualify any
+                                    individual who tampers with the entry process or to cancel, terminate, modify or suspend the competition.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">27. In the case of the intervention of any outside agent or event which naturally changes the result or prevents or hinders its determination, including but not limited to vandalism, power failures, tempests, natural disasters,
+                                    acts of God, civil unrest, strikes; the Promoter may in its absolute discretion cancel the event and recommence it from the start on the same conditions at a later date.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" face="arial, sans-serif">28. This is a fake site with a fake competition for education purposes only.</font>
+                            </p>
+                            <p style="margin: 0px 0px 15px;">
+                                <font size="1" style="" face="arial, sans-serif">28. Please allow up to 28 days for delivery of prizes from the draw date. Prizes will be sent to delivery address provided by the winners. The Promoter and prize suppliers will take no responsibility for prizes lost or
+                                    damaged in transit.</font>
+                            </p>
+                        </div>
+                    </div>
+                    <div style="text-align: center;">
+                        <font size="1">Images: <a href="http://unsplash.com">Unsplash</a>.</font>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
